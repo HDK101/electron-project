@@ -7,7 +7,7 @@ closeWindow = () => {
 
 maximizeWindow = () => {
   let window = remote.getCurrentWindow();
-  window.isMaximized ? window.maximize() : window.minimize();
+  window.isMaximized() ? window.unmaximize() : window.maximize();
 };
 
 minimizeWindow = () => {
