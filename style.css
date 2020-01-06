@@ -24,6 +24,7 @@ CLASSES
   width: 120px;
   height: 100%;
   float: right;
+  display: flex;
 }
 
 /*BUTTON*/
