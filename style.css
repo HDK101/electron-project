@@ -20,7 +20,6 @@ CLASSES
   background-color: rgb(12, 12, 39);
 }
 .div--type-buttons_bar {
-  background-color: rgb(18, 18, 68);
   width: 120px;
   height: 100%;
   float: right;
@@ -29,19 +28,24 @@ CLASSES
 
 /*BUTTON*/
 .button--type-bar {
-    width: 40px;
-    height: 100%;
-    color: white;
-    font-size: 16px;
+  width: 40px;
+  height: 100%;
+  color: white;
+  font-size: 16px;
+  text-align: center;
+  border: none;
+  outline: none;
 }
 
 .button--bar-close {
-    background-color: rgb(255, 38, 0);
-    text-align: center;
-    border: none;
-    
+  background-color: rgb(255, 38, 0);
 }
 .button--bar-close:hover {
-    background-color: rgb(109, 16, 0);
-    
+  background-color: rgb(109, 16, 0);
+}
+.button--bar-max_min {
+  background-color: rgb(18, 18, 68);
+}
+.button--bar-max_min:hover {
+  background-color: rgb(12, 12, 39);
 }
