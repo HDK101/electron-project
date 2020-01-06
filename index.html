@@ -1,19 +1,37 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF-8" />
     <title>Hello World!</title>
     <!-- https://electronjs.org/docs/tutorial/security#csp-meta-tag -->
-    <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline';" />
-    <link rel="stylesheet" href="style.css">
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="script-src 'self' 'unsafe-inline';"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <script src="utils.js"></script>
   </head>
   <body>
-      <div class="div div--type-window_bar">
-
+    <div class="div div--type-window_bar">
+      <!-- Bar button   -->
+      <div class="div div--type-buttons_bar">
+          <button class="button button--type-bar button--bar-close" onclick="closeWindow()">X</button>
       </div>
+    </div>
+    <span style="clear: both;"></span>
     <h1>Hello World!</h1>
-    We are using node <script>document.write(process.versions.node)</script>,
-    Chrome <script>document.write(process.versions.chrome)</script>,
-    and Electron <script>document.write(process.versions.electron)</script>.
+    We are using node
+    <script>
+      document.write(process.versions.node);
+    </script>
+    , Chrome
+    <script>
+      document.write(process.versions.chrome);
+    </script>
+    , and Electron
+    <script>
+      document.write(process.versions.electron);
+    </script>
+    .
   </body>
 </html>

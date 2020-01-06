@@ -1,4 +1,4 @@
-const { app, BrowserWindow } = require("electron");
+const { app, BrowserWindow, remote } = require("electron");
 
 function createWindow() {
   let win = new BrowserWindow({
@@ -18,6 +18,11 @@ function createWindow() {
     // when you should delete the corresponding element.
     win = null;
   });
+}
+
+closeWindow = () => {
+  let window = remote.getCurrentWindow();
+  window.close()
 }
 
 app.on("ready", createWindow);
