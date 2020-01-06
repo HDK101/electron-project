@@ -1,0 +1,26 @@
+{
+  "name": "electron-project",
+  "version": "0.1.0",
+  "description": "An Electron test",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "electron ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HDK101/electron-project.git"
+  },
+  "keywords": [
+    "Electron"
+  ],
+  "author": "EMKBRO",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/HDK101/electron-project/issues"
+  },
+  "homepage": "https://github.com/HDK101/electron-project#readme",
+  "devDependencies": {
+    "electron": "^7.1.7"
+  }
+}
