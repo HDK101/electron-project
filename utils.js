@@ -1,16 +1,19 @@
 const { remote } = require("electron");
 
+let currentWindow = remote.getCurrentWindow();
+
 closeWindow = () => {
-  let window = remote.getCurrentWindow();
-  window.close();
+  currentWindow.close();
 };
 
 maximizeWindow = () => {
-  let window = remote.getCurrentWindow();
-  window.isMaximized() ? window.unmaximize() : window.maximize();
+  currentWindow.isMaximized() ? currentWindow.unmaximize() : currentWindow.maximize();
 };
 
 minimizeWindow = () => {
-  let window = remote.getCurrentWindow();
-  window.minimize();
+  currentWindow.minimize();
+};
+
+module.exports.minimizeTest = () => {
+  return minimizeWindow();
 };
