@@ -20,9 +20,4 @@ function createWindow() {
   });
 }
 
-closeWindow = () => {
-  let window = remote.getCurrentWindow();
-  window.close()
-}
-
 app.on("ready", createWindow);
