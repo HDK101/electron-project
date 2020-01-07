@@ -6,20 +6,30 @@ getCurrentWindow = () => {
   currentWindow = remote.getCurrentWindow();
 };
 
-closeWindow = () => {
-  currentWindow.close();
+closeWindow = win => {
+  win == null ? currentWindow.close() : win.close();
 };
 
-maximizeWindow = () => {
-  currentWindow.isMaximized()
-    ? currentWindow.unmaximize()
-    : currentWindow.maximize();
+maximizeWindow = win => {
+  win == null
+    ? currentWindow.isMaximized()
+      ? currentWindow.unmaximize()
+      : currentWindow.maximize()
+    : win.isMaximized()
+    ? win.unmaximize()
+    : win.maximize();
 };
 
-function minimizeWindow (win) {
+minimizeWindow = win => {
   win == null ? currentWindow.minimize() : win.minimize();
-};
+}
 
 module.exports.minimizeTest = function(winTest) {
   return minimizeWindow(winTest);
+};
+module.exports.maximizeTest = function(winTest) {
+  return maximizeWindow(winTest);
+};
+module.exports.closeTest = function(winTest) {
+  return closeWindow(winTest);
 };

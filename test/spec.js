@@ -15,17 +15,12 @@ describe("Application launch", function() {
     return this.app.start();
   });
 
-  //const win = this.app.browserWindow;
-
   afterEach(function() {
+    this.timeout(10000);
     if (this.app && this.app.isRunning()) {
       return this.app.stop();
     }
   });
-
-  //   it("Check if window is undefined", function() {
-  //     console.log(this.app.browserWindow);
-  //   });
 
   it("Check if window is visible", function() {
     this.app.browserWindow.isVisible().then(function(visible) {
@@ -33,27 +28,13 @@ describe("Application launch", function() {
     });
   });
 
-//   it("Check if window is minimized", function() {
-//     //utils.getCurrentWindowForTest();
-//     utils.minimizeTest(this.app.browserWindow).then(function() {
-//       assert(this.app.browserWindow.isMinimized(), true);
-//     });
-//   });
-
   it("Check if window is minimized", function() {
-    //utils.getCurrentWindowForTest();
     utils.minimizeTest(this.app.browserWindow);
-    assert(this.app.browserWindow, true);
+    assert(this.app.browserWindow.isMinimized(), true);
   });
-
-  //   it("Show initial window", function() {
-  //     return this.app.client.getWindowCount().then(function(count) {
-  //       assert.equal(count, 1);
-  //     });
-  //   });
-
-  it("Check sum of 2 + 2 is 4", function() {
-    const sum = 2 + 2;
-    assert.equal(sum, 4);
+  
+  it("Check if window is maximized", function() {
+    utils.maximizeTest(this.app.browserWindow);
+    assert(this.app.browserWindow.isMaximized(), true);
   });
 });
