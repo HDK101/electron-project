@@ -1,5 +1,4 @@
 const { Application } = require("spectron");
-const assert = require("assert");
 const electronPath = require("electron");
 const path = require("path");
 const utils = require("../modules/utils");
