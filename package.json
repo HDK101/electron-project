@@ -4,7 +4,7 @@
   "description": "An Electron test",
   "main": "main.js",
   "scripts": {
-    "test": "jest",
+    "test": "mocha",
     "start": "electron ."
   },
   "repository": {
