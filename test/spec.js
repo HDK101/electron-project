@@ -29,15 +29,21 @@ describe("Application launch", function() {
 
   it("Check if window is visible", function() {
     this.app.browserWindow.isVisible().then(function(visible) {
-      console.log("window is visible? " + visible);
+      assert(visible, true);
     });
   });
 
+//   it("Check if window is minimized", function() {
+//     //utils.getCurrentWindowForTest();
+//     utils.minimizeTest(this.app.browserWindow).then(function() {
+//       assert(this.app.browserWindow.isMinimized(), true);
+//     });
+//   });
+
   it("Check if window is minimized", function() {
     //utils.getCurrentWindowForTest();
-    this.app.browserWindow.minimize().then(function() {
-      assert(this.app.browserWindow.isMinimized(), true);
-    });
+    utils.minimizeTest(this.app.browserWindow);
+    assert(this.app.browserWindow, true);
   });
 
   //   it("Show initial window", function() {
@@ -48,6 +54,6 @@ describe("Application launch", function() {
 
   it("Check sum of 2 + 2 is 4", function() {
     const sum = 2 + 2;
-    return assert.equal(sum, 4);
+    assert.equal(sum, 4);
   });
 });
