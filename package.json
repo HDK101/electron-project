@@ -21,6 +21,7 @@
   },
   "homepage": "https://github.com/HDK101/electron-project#readme",
   "devDependencies": {
-    "electron": "^7.1.7"
+    "electron": "^7.1.7",
+    "jest": "^24.9.0"
   }
 }
