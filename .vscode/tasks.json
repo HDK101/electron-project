@@ -19,5 +19,14 @@
                 "isDefault": true
             }
         },
+        {
+            "label": "Run tests",
+            "type": "shell",
+            "command": "NODE_ENV=test npm test",
+            "group": {
+                "kind": "test",
+                "isDefault": true
+            }
+        },
     ]
 }

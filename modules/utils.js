@@ -16,14 +16,14 @@ maximizeWindow = () => {
     : currentWindow.maximize();
 };
 
-minimizeWindow = () => {
-  currentWindow.minimize();
+minimizeWindow = win => {
+  win != null ? currentWindow.minimize() : win.minimize();
 };
 
-module.exports.minimizeTest = () => {
-  return minimizeWindow();
+module.exports.minimizeTest = winTest => {
+  return minimizeWindow(winTest);
 };
 
 module.exports.getCurrentWindowForTest = () => {
   return getCurrentWindow();
-}
+};
