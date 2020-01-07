@@ -8,7 +8,6 @@ describe("Application launch", function() {
     this.timeout(10000);
     this.app = new Application({
       path: electronPath
-      //   args: [path.join(__dirname), "../"]
     });
     return this.app.start();
   });
@@ -20,8 +19,13 @@ describe("Application launch", function() {
   });
 
   it("Show initial window", function() {
-    return this.app.client.getWindowCount().then(count => {
+    return this.app.client.getWindowCount().then(function(count) {
       assert.equal(count, 1);
     });
+  });
+
+  it("Check sum of 2 + 2 is 4", function() {
+      const sum = 2 + 2;
+      return assert.equal(sum, 4);
   });
 });
