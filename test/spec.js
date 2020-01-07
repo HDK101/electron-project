@@ -23,18 +23,31 @@ describe("Application launch", function() {
   });
 
   it("Check if window is visible", function() {
+    var isVisible;
     this.app.browserWindow.isVisible().then(function(visible) {
-      assert(visible, true);
+      isVisible = visible;
+      console.log("window is visible? " + visible);
+      return assert.equal(visible, true);
     });
   });
 
   it("Check if window is minimized", function() {
     utils.minimizeTest(this.app.browserWindow);
-    assert(this.app.browserWindow.isMinimized(), true);
+    this.app.browserWindow.isMinimized().then(function(minimized) {
+      console.log("The window is minimized:" + minimized);
+      return assert.equal(minimized, true);
+    });
   });
-  
+
   it("Check if window is maximized", function() {
     utils.maximizeTest(this.app.browserWindow);
-    assert(this.app.browserWindow.isMaximized(), true);
+    //this.app.browserWindow.maximize();
+
+    /*Maximize*/
+    this.app.browserWindow.isMaximized().then(function(maximized) {
+      console.log("The window is maximized:" + maximized);
+      return assert.equal(maximized, true);
+    });
+    
   });
 });

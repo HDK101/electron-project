@@ -11,18 +11,19 @@ closeWindow = win => {
 };
 
 maximizeWindow = win => {
-  win == null
-    ? currentWindow.isMaximized()
+  if (!win) {
+    currentWindow.isMaximized()
       ? currentWindow.unmaximize()
-      : currentWindow.maximize()
-    : win.isMaximized()
-    ? win.unmaximize()
-    : win.maximize();
+      : currentWindow.maximize();
+  }
+  else {
+    win.maximize();
+  }
 };
 
 minimizeWindow = win => {
   win == null ? currentWindow.minimize() : win.minimize();
-}
+};
 
 module.exports.minimizeTest = function(winTest) {
   return minimizeWindow(winTest);
